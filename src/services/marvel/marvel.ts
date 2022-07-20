@@ -18,16 +18,19 @@ class Marvel {
     this.client = new Axios({
       baseURL: 'https://gateway.marvel.com/v1/public',
     });
+
     this.authentication = `?ts=${this.ts}&apikey=${publicKey}&hash=${this.hash}`;
   }
 
   gerenateHash(): string {
     const hash = MD5(this.ts + privateKey + publicKey).toString();
+
     return hash;
   }
 
   async get(route: string): Promise<any> {
     const response = await this.client.get(route + this.authentication);
+
     return response;
   }
 }

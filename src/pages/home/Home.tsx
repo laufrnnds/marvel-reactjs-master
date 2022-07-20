@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import PaperDefault from '../../components/PaperDefault/PaperDefault';
@@ -18,7 +18,8 @@ const Home: React.FC = () => {
         })
       );
     }, 10000);
-    dispatch(createComic('NOVA REVISTA'));
+
+    dispatch(createComic('Nova revista'));
   }, []);
 
   const text = ` Lorem ipsum dolor sit amet consectetur

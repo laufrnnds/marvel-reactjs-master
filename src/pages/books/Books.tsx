@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -12,47 +11,46 @@ import {
 const Books: React.FC = () => {
   const dispatch = useDispatch();
   const booksRedux = useSelector(selectAll);
+  const booksStateOriginal = useSelector((state: any) => state.books);
 
   useEffect(() => {
     const book: Book = {
       bookId: 1,
-      title: 'Meu Livro',
+      title: 'Meu livro',
     };
-
+    // dispatch(addOne({ bookId: 1, title: 'Meu livro' }));
     dispatch(addOne(book));
-    dispatch(addOne({ bookId: 2, title: 'MEU LIVRO 2' }));
+    dispatch(addOne({ bookId: 2, title: 'Meu livro 2' }));
+    dispatch(addOne({ bookId: 2, title: 'Meu livro 2' }));
 
     const books: Book[] = [
-      { bookId: 1, title: 'MEU LIVRO 1' },
-      { bookId: 2, title: 'MEU LIVRO 2' },
-      { bookId: 3, title: 'MEU LIVRO 3' },
-      { bookId: 4, title: 'MEU LIVRO 4' },
+      { bookId: 2, title: 'Meu livro 2' },
+      { bookId: 1, title: 'Meu livro 1' },
+      { bookId: 3, title: 'Meu livro 3' },
+      { bookId: 4, title: 'Meu livro 4' },
     ];
 
     dispatch(addMany(books));
 
     dispatch(
       addMany([
-        { bookId: 1, title: 'MEU LIVRO 1' },
-        { bookId: 2, title: 'MEU LIVRO 2' },
-        { bookId: 3, title: 'MEU LIVRO 3' },
-        { bookId: 4, title: 'MEU LIVRO 4' },
+        { bookId: 2, title: 'Meu livro 2' },
+        { bookId: 1, title: 'Meu livro 1' },
+        { bookId: 3, title: 'Meu livro 3' },
+        { bookId: 4, title: 'Meu livro 4' },
       ])
     );
 
-    dispatch(updateOne({ id: 2, changes: { title: 'MEU LIVRO EDITADO' } }));
+    dispatch(updateOne({ id: 2, changes: { title: 'Meu livro EDITADO' } }));
   }, []);
 
   useEffect(() => {
     console.log(booksRedux);
-  }, [booksRedux]);
 
-  return (
-    <>
-      <h1>Growdev</h1>
-      <p>oioioi</p>
-    </>
-  );
+    console.log(booksStateOriginal);
+  }, [booksRedux, booksStateOriginal]);
+
+  return <h1>Growdev</h1>;
 };
 
 export default Books;

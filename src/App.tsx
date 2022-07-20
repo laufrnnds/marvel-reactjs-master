@@ -5,7 +5,7 @@ import ThemeDefault from './config/theme/Default';
 
 import AppRoutes from './routes/AppRoutes';
 import StylesGlobal from './config/GlobalStyles';
-import store from './store/index';
+import { store } from './store';
 
 const App: React.FC = () => {
   return (
