@@ -83,7 +83,7 @@ const Characters: React.FC = () => {
     <Grid container spacing={2}>
       <Grid item xs={12}>
         <Typography variant="h3" color="primary">
-          Personagens - S2
+          Personagens -
         </Typography>
         {comicRedux.loading && <div>Loading...</div>}
         {!comicRedux.loading && comicRedux.error ? (
