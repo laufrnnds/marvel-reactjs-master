@@ -1,5 +1,5 @@
-const privateKey = '47e3a0288aa4f811e877881a49c1f00167f98e1f';
+const privateKey = process.env.REACT_APP_MARVEL_PRIVATE_KEYP;
 
-const publicKey = '114590c7cfe667872cf8d7b56a0076a2';
+const publicKey = process.env.REACT_APP_MARVEL_PUBLIC_KEY;
 
 export { privateKey, publicKey };
