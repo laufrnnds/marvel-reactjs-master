@@ -48,11 +48,14 @@ const Characters: React.FC = () => {
     <Grid container spacing={2}>
       <Grid item xs={12}>
         <Typography variant="h3" color="primary">
-          Personagens - {comicRedux}
+          Personagenss - {comicRedux}
         </Typography>
       </Grid>
       <Grid item xs={12}>
         <DynamicAccordion items={characters} />
+        <Typography variant="h3" color="primary">
+          Personagens - {comicRedux}
+        </Typography>
       </Grid>
     </Grid>
   );
