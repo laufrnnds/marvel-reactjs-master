@@ -33,11 +33,9 @@ const Characters: React.FC = () => {
     const result = await marvel.get('/characters');
     console.log(`result${result}`);
   }
-  useEffect(() => {
-    getCharacters();
-  }, []);
 
   useEffect(() => {
+    getCharacters();
     dispatch(requestComic());
     marvel
       .get('/comics')
