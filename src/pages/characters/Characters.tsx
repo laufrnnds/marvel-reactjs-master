@@ -25,10 +25,17 @@ const Characters: React.FC = () => {
   const comicRedux = useSelector((state: any) => state.comic);
 
   async function run() {
-    console.log('chamou run');
     const response = await marvel.get('/characters');
     console.log(response);
   }
+
+  async function getCharacters() {
+    const result = await marvel.get('/characters');
+    console.log(`result${result}`);
+  }
+  useEffect(() => {
+    getCharacters();
+  }, []);
 
   useEffect(() => {
     dispatch(requestComic());
